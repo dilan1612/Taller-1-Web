@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /**
- * @swagger
+ *  @swagger
  * /shops:
  *   get:
  *     summary: Retrieve a list of shops
