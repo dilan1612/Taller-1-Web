@@ -1,30 +1,70 @@
-const swaggerJSDoc = require('swagger-jsdoc')
+const swaggerJSDoc = require('swagger-jsdoc');
 
 const swaggerDefinition = {
-  openapi : '3.0.0',
-  info : {
-    title : 'MyAPI',
+  openapi: '3.0.0',
+  info: {
+    title: 'API Documentation',
     version: '1.0.0',
-    description:'Ejemplo de documentar son Swagger',
-    license : {
-      name : 'Licensed Under MIT',
-      url : 'https://spdx.org/licenses/MIT.html'
-    },
-    contact : {
-      name : 'Jairo Armando',
-      url : 'https://ni.idea.com'
-    }
-  }, 
+    description: 'API for managing shops and instruments',
+  },
   servers: [
     {
-      url: 'http://localhost:3030',
-      description: 'Server to Training'
-    }
-  ]
-}
+      url: 'https://backend-trp2.onrender.com', // URL base de la API
+    },
+  ],
+  components: {
+    schemas: {
+      Shop: {
+        type: 'object',
+        required: ['name', 'location'],
+        properties: {
+          id: {
+            type: 'string',
+            description: 'Unique identifier for the shop',
+            example: 'abc123',
+          },
+          name: {
+            type: 'string',
+            description: 'Name of the shop',
+            example: 'Shop 3',
+          },
+          location: {
+            type: 'string',
+            description: 'Location of the shop',
+            example: 'Location 3',
+          },
+        },
+      },
+      Instrument: {
+        type: 'object',
+        required: ['name', 'type'],
+        properties: {
+          id: {
+            type: 'string',
+            description: 'Unique identifier for the instrument',
+            example: 'xyz789',
+          },
+          name: {
+            type: 'string',
+            description: 'Name of the instrument',
+            example: 'Violin',
+          },
+          type: {
+            type: 'string',
+            description: 'Type of the instrument (e.g., string, percussion)',
+            example: 'String',
+          },
+        },
+      },
+    },
+  },
+};
+
 const options = {
   swaggerDefinition,
-  apis:['./routes/*.js'],
-}
-const swaggerSpec = swaggerJSDoc(options)
-module.exports = swaggerSpec
+  apis: ['./routes/*.js'], // Archivos donde Swagger buscará la documentación
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+
+module.exports = swaggerSpec;
