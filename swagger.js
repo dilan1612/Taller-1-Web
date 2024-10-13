@@ -5,61 +5,23 @@ const swaggerDefinition = {
   info: {
     title: 'API Documentation',
     version: '1.0.0',
-    description: 'API for managing shops and instruments',
-  },
+    description:'Ejemplo de documentar son Swagger',
+    license : {
+      name : 'Licensed Under MIT',
+      url : 'https://spdx.org/licenses/MIT.html'
+    },
+    contact : {
+      name : 'Jairo Armando',
+      url : 'https://ni.idea.com'
+    }
+  }, 
   servers: [
     {
-       url: 'https://backend-trp2.onrender.com/instruments'
-    },
-  ],
-  components: {
-    schemas: {
-      Shop: {
-        type: 'object',
-        required: ['name', 'location'],
-        properties: {
-          id: {
-            type: 'string',
-            description: 'Unique identifier for the shop',
-            example: 'abc123',
-          },
-          name: {
-            type: 'string',
-            description: 'Name of the shop',
-            example: 'Shop 3',
-          },
-          location: {
-            type: 'string',
-            description: 'Location of the shop',
-            example: 'Location 3',
-          },
-        },
-      },
-      Instrument: {
-        type: 'object',
-        required: ['name', 'type'],
-        properties: {
-          id: {
-            type: 'string',
-            description: 'Unique identifier for the instrument',
-            example: 'xyz789',
-          },
-          name: {
-            type: 'string',
-            description: 'Name of the instrument',
-            example: 'Violin',
-          },
-          type: {
-            type: 'string',
-            description: 'Type of the instrument (e.g., string, percussion)',
-            example: 'String',
-          },
-        },
-      },
-    },
-  },
-};
-
+      url: 'http://localhost:3030',
+      description: 'Server to Training'
+    }
+  ]
+}
 const options = {
   swaggerDefinition,
   apis: ['./routes/*.js'], // Archivos donde Swagger buscará la documentación

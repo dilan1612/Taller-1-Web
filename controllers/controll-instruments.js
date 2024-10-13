@@ -39,7 +39,7 @@ module.exports = {
   updateInstrument: async (req, res) => {
     const { id } = req.params;
     const {type, marca, peso, value } = req.body;
-
+    
     try {
       const instrument = await Instrument.findByIdAndUpdate(id, {type, marca ,peso, value }, { new: true });
       if (instrument) {
