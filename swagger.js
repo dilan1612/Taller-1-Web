@@ -9,7 +9,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'https://backend-trp2.onrender.com', // URL base de la API
+       url: 'https://backend-trp2.onrender.com/instruments'
     },
   ],
   components: {
