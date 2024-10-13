@@ -48,7 +48,7 @@ module.exports = routes
  *       400:
  *         description: Bad request.
  */
-router.post('/', (req, res) => {
+routes.post('/', (req, res) => {
   // Lógica para crear un instrumento
   res.status(201).json({ message: 'Instrument created successfully' });
 });
@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
  *       404:
  *         description: Instrument not found.
  */
-router.put('/:id', (req, res) => {
+routes.put('/:id', (req, res) => {
   // Lógica para actualizar un instrumento
   res.status(200).json({ message: 'Instrument updated successfully' });
 });
@@ -106,7 +106,7 @@ router.put('/:id', (req, res) => {
  *       404:
  *         description: Instrument not found.
  */
-router.delete('/:id', (req, res) => {
+routes.delete('/:id', (req, res) => {
   // Lógica para eliminar un instrumento
   res.status(200).json({ message: 'Instrument deleted successfully' });
 });

@@ -49,7 +49,7 @@ module.exports = routes
  *       400:
  *         description: Bad request.
  */
-router.post('/', (req, res) => {
+routes.post('/', (req, res) => {
   // Lógica para crear una tienda
   res.status(201).json({ message: 'Shop created successfully' });
 });
@@ -83,7 +83,7 @@ router.post('/', (req, res) => {
  *       404:
  *         description: Shop not found.
  */
-router.put('/:id', (req, res) => {
+routes.put('/:id', (req, res) => {
   // Lógica para actualizar una tienda
   res.status(200).json({ message: 'Shop updated successfully' });
 });
@@ -107,7 +107,7 @@ router.put('/:id', (req, res) => {
  *       404:
  *         description: Shop not found.
  */
-router.delete('/:id', (req, res) => {
+routes.delete('/:id', (req, res) => {
   // Lógica para eliminar una tienda
   res.status(200).json({ message: 'Shop deleted successfully' });
 });
