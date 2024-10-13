@@ -1,5 +1,18 @@
-const express = require('express');
-const router = express.Router();
+const routes = require('express').Router()
+
+const {
+  save,
+  listInstrument,
+  updateInstrument,
+  deleteInstrument
+} = require('./../controllers/controll-instruments')
+
+routes.post('/:id',save)
+routes.get("/", listInstrument)
+routes.put('/:id', updateInstrument);
+routes.delete('/:id', deleteInstrument);
+
+module.exports = routes
 
 /**
  * @swagger
@@ -98,4 +111,4 @@ router.delete('/:id', (req, res) => {
   res.status(200).json({ message: 'Instrument deleted successfully' });
 });
 
-module.exports = router;
+

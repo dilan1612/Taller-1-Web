@@ -1,6 +1,20 @@
-const express = require('express');
-const router = express.Router();
+const routes = require('express').Router()
 
+const {
+  createShop,
+  listShop,
+  updateShop,
+  deleteShop,
+  findById
+} = require('./../controllers/controll-shop')
+
+routes.get('/',listShop)
+routes.get('/:id',findById)
+routes.post('/',createShop)
+routes.put('/', updateShop)
+routes.delete('/',deleteShop)
+
+module.exports = routes
 /**
  *  @swagger
  * /shops:
@@ -98,4 +112,4 @@ router.delete('/:id', (req, res) => {
   res.status(200).json({ message: 'Shop deleted successfully' });
 });
 
-module.exports = router;
+
