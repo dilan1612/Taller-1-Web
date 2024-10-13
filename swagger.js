@@ -11,13 +11,13 @@ const swaggerDefinition = {
       url : 'https://spdx.org/licenses/MIT.html'
     },
     contact : {
-      name : 'Jairo Armando',
+      name : 'Dilan Bohorquez-Sergio Mesa',
       url : 'https://ni.idea.com'
     }
   }, 
   servers: [
     {
-      url: 'http://localhost:3030',
+      url: 'https://backend-trp2.onrender.com',
       description: 'Server to Training'
     }
   ]
