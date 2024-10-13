@@ -1,11 +1,15 @@
 const routes = require('express').Router()
 
 const {
-  findAll,
-  save
+  save,
+  listInstrument,
+  updateInstrument,
+  deleteInstrument
 } = require('./../controllers/controll-instruments')
 
-routes.get('/',findAll)
 routes.post('/:id',save)
+routes.get("/", listInstrument)
+routes.put('/:id', updateInstrument);
+routes.delete('/:id', deleteInstrument);
 
 module.exports = routes

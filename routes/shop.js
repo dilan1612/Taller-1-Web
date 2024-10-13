@@ -1,15 +1,17 @@
 const routes = require('express').Router()
 
 const {
-  findAll,
-  findById,
-  save,
-  update
+  createShop,
+  listShop,
+  updateShop,
+  deleteShop,
+  findById
 } = require('./../controllers/controll-shop')
 
-routes.get('/',findAll)
+routes.get('/',listShop)
 routes.get('/:id',findById)
-routes.post('/',save)
-routes.put('/:idR',update)
+routes.post('/',createShop)
+routes.put('/', updateShop)
+routes.delete('/',deleteShop)
 
 module.exports = routes
